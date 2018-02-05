@@ -4,7 +4,7 @@ just swipe up or down to go to next or prev page and it has also zoom In and Zoo
 
 ![alt tag](https://goo.gl/Qe1tHc)
 
-# Step 1:  Add it in your root build.gradle at the end of repositories:
+## Step 1:  Add it in your root build.gradle at the end of repositories:
 
 	allprojects {
 		repositories {
@@ -13,7 +13,7 @@ just swipe up or down to go to next or prev page and it has also zoom In and Zoo
 		}
 	}
   
-  # Step 2. Add the dependency
+  ## Step 2. Add the dependency
 
 	dependencies {
 	        compile 'com.github.prabhat1707:VerticalViewPager:1.0'
@@ -29,7 +29,7 @@ just swipe up or down to go to next or prev page and it has also zoom In and Zoo
     </com.prabhat1707.verticalpager.VerticalViewPager>
   ```
   
-  # [License](LICENSE.MD)
+  # License
   ```
  Copyright [2018] [prabhat rai]
    Licensed under the Apache License, Version 2.0 (the "License");
