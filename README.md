@@ -16,7 +16,7 @@ just swipe up or down to go to next or prev page and it has also zoom In and Zoo
   ## Step 2. Add the dependency
 
 	dependencies {
-	        compile 'com.github.prabhat1707:VerticalViewPager:1.0'
+	        implementation 'com.github.prabhat1707:VerticalViewPager:1.0'
 	}
   
   # Usage
