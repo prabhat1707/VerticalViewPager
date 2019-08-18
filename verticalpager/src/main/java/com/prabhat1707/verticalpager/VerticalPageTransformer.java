@@ -10,6 +10,8 @@ import android.view.View;
 public class VerticalPageTransformer implements ViewPager.PageTransformer {
     private float MIN_SCALE = 0.75f;
 
+
+
     public void transformPage(View view, float position) {
         int pageWidth = view.getWidth();
 
