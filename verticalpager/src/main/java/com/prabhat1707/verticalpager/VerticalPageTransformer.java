@@ -1,7 +1,8 @@
 package com.prabhat1707.verticalpager;
 
-import android.support.v4.view.ViewPager;
 import android.view.View;
+
+import androidx.viewpager.widget.ViewPager;
 
 /**
  * Created by prabhat on 5/2/18.
