@@ -6,24 +6,24 @@ import android.util.AttributeSet;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 
-public class HorizontalViewPager extends ViewPager {
+public class DoubleViewPager extends ViewPager {
     private GestureDetector xScrollDetector;
 
-    public HorizontalViewPager(Context context) {
+    public DoubleViewPager(Context context) {
         super(context);
         init();
     }
 
     private void init() {
-        setPageTransformer(true, new VerticalPageTransformer());
-        // The easiest way to get rid of the overscroll drawing that happens on the left and right
-        setOverScrollMode(OVER_SCROLL_NEVER);
+//        setPageTransformer(true, new VerticalPageTransformer());
+//        // The easiest way to get rid of the overscroll drawing that happens on the left and right
+//        setOverScrollMode(OVER_SCROLL_NEVER);
     }
 
-    public HorizontalViewPager(Context context, AttributeSet attrs) {
+    public DoubleViewPager(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
-        xScrollDetector = new GestureDetector(getContext(), new XScrollDetector());
+        xScrollDetector = new GestureDetector(getContext(), new DoubleViewPager.XScrollDetector());
     }
 
     class XScrollDetector extends GestureDetector.SimpleOnGestureListener {
@@ -40,6 +40,18 @@ public class HorizontalViewPager extends ViewPager {
             return true;
         }
 
-        return super.onInterceptTouchEvent(ev);
+        return super.onInterceptTouchEvent(swapXY(ev));
+    }
+
+    private MotionEvent swapXY(MotionEvent ev) {
+        float width = getWidth();
+        float height = getHeight();
+
+        float newX = (ev.getY() / height) * width;
+        float newY = (ev.getX() / width) * height;
+
+        ev.setLocation(newX, newY);
+
+        return ev;
     }
 }
